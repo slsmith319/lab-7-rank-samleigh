@@ -29,7 +29,7 @@ frog_hist <- ggplot(kermit, aes(x= Score.pre)) +
 ```
 Perform rank-based comparisons using Mann-Whitnet U and Wilcoxon-Signed Rank
 
-Question: Is there a significant difference in pre-talk ranks aof Kermit for Male and Female respondents? 
+Question: Is there a significant difference in pre-talk ranks aof Kermit for Male and Female respondents?  
 
 ```{r}
 mwu_kermit <- kermit %>% 
@@ -42,3 +42,19 @@ mwu_kermit <- kermit %>%
 mwu_kermit
 ```
 
+"There was no significant difference in ranks for male and female respondents (w= 155.5, p=0.4, alpha=0.05)"
+
+Next question (collaborators):
+
+Is there a significant change in Kermit rankings before and after his Bren talk?
+
+```{r}
+wsr_kermit <- wilcox.test(kermit$Score.pre, kermit$Score.post, paired = TRUE)
+
+#Null: There isn't a significant difference in ranks for pre and post talk scores
+
+wsr_kermit
+
+
+```
+ There is no significant difference in ranks for pre and post scores 
