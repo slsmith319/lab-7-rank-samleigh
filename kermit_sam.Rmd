@@ -23,7 +23,7 @@ kermit
 frog_hist <- ggplot(kermit, aes( x = Score.pre)) + 
   geom_histogram(bins = 4) +
   facet_wrap(~Gender)
-
+ 
 frog_hist
 ```
 
