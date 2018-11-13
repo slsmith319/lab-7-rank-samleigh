@@ -16,3 +16,23 @@ Bonjour mon amie! - Comment-vas-tu?
 
 random testing - natalie
 >>>>>>> 188aafcf706e2cf8299375ef9b2aada7ed1b486d
+
+
+```{r}
+library(tidyverse)
+
+kermit <- read_csv("kermit.csv")
+
+frog_hist <- ggplot(kermit, aes(x= Score.pre)) +
+  geom_histogram(bins=4) +
+  facet_wrap(~Gender)
+```
+Perform rank-based comparisons using Mann-Whitnet U and Wilcoxon-Signed Rank
+
+Question: Is there a significant difference in pre-talk ranks aof Kermit for Male and Female respondents? 
+
+```{r}
+mwu_kermit <- kermit %>% 
+  wilcox.test(Score.pre ~ Gender, data =.)
+```
+
