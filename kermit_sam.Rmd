@@ -12,3 +12,18 @@ knitr::opts_chunk$set(echo = TRUE)
 Bonjour mon amie! - Comment-vas-tu? 
 
 random testing - natalie
+
+```{r}
+library(tidyverse)
+
+kermit <- read_csv("kermit.csv")
+
+kermit
+
+frog_hist <- ggplot(kermit, aes( x = Score.pre)) + 
+  geom_histogram(bins = 4) +
+  facet_wrap(~Gender)
+
+frog_hist
+```
+
