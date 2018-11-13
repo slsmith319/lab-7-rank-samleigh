@@ -33,6 +33,12 @@ Question: Is there a significant difference in pre-talk ranks aof Kermit for Mal
 
 ```{r}
 mwu_kermit <- kermit %>% 
-  wilcox.test(Score.pre ~ Gender, data =.)
+  wilcox.test(Score.pre ~ Gender, data =.) 
+
+#Null Hypothesis: There is NOT a significant difference in ranks for  
+
+#Alternative: There is a significant difference in ranks for male and female respondents
+
+mwu_kermit
 ```
 
