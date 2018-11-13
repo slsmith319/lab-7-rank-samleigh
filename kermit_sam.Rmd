@@ -9,9 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<<<<<<< HEAD
+Bonjour mon amie! - Comment-vas-tu? Je suis fatigue!
+=======
 Bonjour mon amie! - Comment-vas-tu? 
 
 random testing - natalie
+<<<<<<< HEAD
 
 ```{r}
 library(tidyverse)
@@ -25,5 +29,14 @@ frog_hist <- ggplot(kermit, aes( x = Score.pre)) +
   facet_wrap(~Gender)
  
 frog_hist
+```
+
+=======
+>>>>>>> 188aafcf706e2cf8299375ef9b2aada7ed1b486d
+>>>>>>> 4b2674af9de6ef386546eada457b426625f5fa26
+
+```{r}
+mwu_kermit <- kermit %>%
+  wilcox.test()
 ```
 
