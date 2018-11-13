@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 <<<<<<< HEAD
-Bonjour mon amie! - Comment-vas-tu? Je suis fatigue!
+Bonjour mon amie! - Comment-vas-tu?
 =======
 Bonjour mon amie! - Comment-vas-tu? 
 
