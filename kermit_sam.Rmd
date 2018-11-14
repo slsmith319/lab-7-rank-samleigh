@@ -33,10 +33,31 @@ frog_hist
 
 =======
 >>>>>>> 188aafcf706e2cf8299375ef9b2aada7ed1b486d
+<<<<<<< HEAD
 >>>>>>> 4b2674af9de6ef386546eada457b426625f5fa26
 
 ```{r}
 mwu_kermit <- kermit %>%
   wilcox.test()
+=======
+
+
+```{r}
+library(tidyverse)
+
+kermit <- read_csv("kermit.csv")
+
+frog_hist <- ggplot(kermit, aes(x= Score.pre)) +
+  geom_histogram(bins=4) +
+  facet_wrap(~Gender)
+```
+Perform rank-based comparisons using Mann-Whitnet U and Wilcoxon-Signed Rank
+
+Question: Is there a significant difference in pre-talk ranks aof Kermit for Male and Female respondents? 
+
+```{r}
+mwu_kermit <- kermit %>% 
+  wilcox.test(Score.pre ~ Gender, data =.)
+>>>>>>> fb05bb7eca75ad632939475164e7ae77173a1280
 ```
 
