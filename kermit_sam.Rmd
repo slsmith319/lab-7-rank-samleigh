@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 <<<<<<< HEAD
-Bonjour mon amie! - Comment-vas-tu? Je suis fatigue!
+Bonjour mon amie! - Comment-vas-tu?
 =======
 Bonjour mon amie! - Comment-vas-tu? 
 
@@ -53,11 +53,37 @@ frog_hist <- ggplot(kermit, aes(x= Score.pre)) +
 ```
 Perform rank-based comparisons using Mann-Whitnet U and Wilcoxon-Signed Rank
 
-Question: Is there a significant difference in pre-talk ranks aof Kermit for Male and Female respondents? 
+Question: Is there a significant difference in pre-talk ranks aof Kermit for Male and Female respondents?  
 
 ```{r}
 mwu_kermit <- kermit %>% 
+<<<<<<< HEAD
   wilcox.test(Score.pre ~ Gender, data =.)
 >>>>>>> fb05bb7eca75ad632939475164e7ae77173a1280
+=======
+  wilcox.test(Score.pre ~ Gender, data =.) 
+
+#Null Hypothesis: There is NOT a significant difference in ranks for  
+
+#Alternative: There is a significant difference in ranks for male and female respondents
+
+mwu_kermit
+>>>>>>> bb29910ea82f35cd0a6f0d44b3eb1cc84950a9eb
 ```
 
+"There was no significant difference in ranks for male and female respondents (w= 155.5, p=0.4, alpha=0.05)"
+
+Next question (collaborators):
+
+Is there a significant change in Kermit rankings before and after his Bren talk?
+
+```{r}
+wsr_kermit <- wilcox.test(kermit$Score.pre, kermit$Score.post, paired = TRUE)
+
+#Null: There isn't a significant difference in ranks for pre and post talk scores
+
+wsr_kermit
+
+
+```
+ There is no significant difference in ranks for pre and post scores 
